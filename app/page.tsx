@@ -4338,31 +4338,31 @@ export default function App(){
   const withQty=useMemo(()=>display.filter(p=>p.qty>0).length,[display]);
   const maxOrd=useMemo(()=>Math.max(...display.map(p=>p.ord),0),[display]);
   const yrs=useMemo(()=>{const s=new Set();P.forEach(p=>{if(p.y)s.add(p.y)});return["전체",...[...s].sort().reverse()]},[P]);
-  const syncCol=syncStatus==="syncing"?"#4fc3f7":syncStatus==="done"?"#66bb6a":syncStatus==="error"?"#ef5350":"#999";
+  const syncCol=syncStatus==="syncing"?"#1565C0":syncStatus==="done"?"#2E7D32":syncStatus==="error"?"#C62828":"#666";
 
   return(<>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;600;700;800;900&family=Outfit:wght@400;600;700;800;900&display=swap" rel="stylesheet"/>
     <style>{`*{box-sizing:border-box;margin:0}:root{--bg:#f5f6fa;--cd:#fff;--bd:#e8e8ee;--t1:#1a1a2e;--t2:#666;--t3:#999;--rw:#fafbfe;--ip:#fff;--br:#eee}@media(prefers-color-scheme:dark){:root{--bg:#11111b;--cd:#1e1e2e;--bd:#2a2a3e;--t1:#e0e0e0;--t2:#aaa;--t3:#777;--rw:#1a1a2e;--ip:#2a2a3e;--br:#333}}body{margin:0;font-family:'Noto Sans KR',sans-serif;background:var(--bg);color:var(--t1)}@keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}`}</style>
     <div style={{minHeight:"100vh"}}>
-      <div style={{background:"linear-gradient(135deg,#1a1a2e,#16213e,#0f3460)",padding:"18px 20px",color:"#fff"}}>
+      <div style={{background:"linear-gradient(135deg,#FFF9C4,#FFF176,#FFEE58)",padding:"18px 20px",color:"#333"}}>
         <div style={{maxWidth:1200,margin:"0 auto"}}>
           <div style={{display:"flex",alignItems:"center",gap:10}}>
             <span style={{fontSize:30}}>🧣</span>
             <div style={{flex:1}}>
               <h1 style={{fontSize:17,fontWeight:900,fontFamily:"'Outfit'"}}>오즈키즈 시즌별 기획제품 대시보드</h1>
-              <p style={{fontSize:12,color:"rgba(255,255,255,.5)",marginTop:2}}>제품DB {P.length.toLocaleString()}개 · 발주DB 연동</p>
+              <p style={{fontSize:12,color:"rgba(0,0,0,.45)",marginTop:2}}>제품DB {P.length.toLocaleString()}개 · 발주DB 연동</p>
             </div>
             <div style={{display:"flex",alignItems:"center",gap:4}}>
               <span style={{width:6,height:6,borderRadius:"50%",background:syncCol,animation:syncStatus==="syncing"?"pulse 1s infinite":"none"}}/>
               <span style={{fontSize:8,color:syncCol}}>{syncMsg||"대기"}</span>
             </div>
           </div>
-          <div style={{display:"flex",gap:14,marginTop:10,padding:"8px 12px",background:"rgba(255,255,255,.08)",borderRadius:8,flexWrap:"wrap"}}>
-            <div><div style={{fontSize:10,color:"rgba(255,255,255,.5)"}}>제품수</div><div style={{fontSize:20,fontWeight:900,fontFamily:"'Outfit'"}}>{display.length}</div></div>
-            <div><div style={{fontSize:10,color:"rgba(255,255,255,.5)"}}>발주있음</div><div style={{fontSize:20,fontWeight:900,fontFamily:"'Outfit'"}}>{withQty}</div></div>
-            <div><div style={{fontSize:10,color:"rgba(255,255,255,.5)"}}>최대차수</div><div style={{fontSize:20,fontWeight:900,fontFamily:"'Outfit'",color:"#ce93d8"}}>{maxOrd}차</div></div>
-            <div><div style={{fontSize:10,color:"rgba(255,255,255,.5)"}}>총발주수량</div><div style={{fontSize:20,fontWeight:900,fontFamily:"'Outfit'",color:"#4fc3f7"}}>{totalQty.toLocaleString()}</div></div>
-            <div style={{marginLeft:"auto",textAlign:"right"}}><div style={{fontSize:10,color:"rgba(255,255,255,.5)"}}>총 생산금액</div><div style={{fontSize:24,fontWeight:900,color:"#4fc3f7",fontFamily:"'Outfit'"}}>{fmtM(totalAmt)}</div></div>
+          <div style={{display:"flex",gap:14,marginTop:10,padding:"8px 12px",background:"rgba(0,0,0,.06)",borderRadius:8,flexWrap:"wrap"}}>
+            <div><div style={{fontSize:10,color:"rgba(0,0,0,.45)"}}>제품수</div><div style={{fontSize:20,fontWeight:900,fontFamily:"'Outfit'"}}>{display.length}</div></div>
+            <div><div style={{fontSize:10,color:"rgba(0,0,0,.45)"}}>발주있음</div><div style={{fontSize:20,fontWeight:900,fontFamily:"'Outfit'"}}>{withQty}</div></div>
+            <div><div style={{fontSize:10,color:"rgba(0,0,0,.45)"}}>최대차수</div><div style={{fontSize:20,fontWeight:900,fontFamily:"'Outfit'",color:"#7B1FA2"}}>{maxOrd}차</div></div>
+            <div><div style={{fontSize:10,color:"rgba(0,0,0,.45)"}}>총발주수량</div><div style={{fontSize:20,fontWeight:900,fontFamily:"'Outfit'",color:"#1565C0"}}>{totalQty.toLocaleString()}</div></div>
+            <div style={{marginLeft:"auto",textAlign:"right"}}><div style={{fontSize:10,color:"rgba(0,0,0,.45)"}}>총 생산금액</div><div style={{fontSize:24,fontWeight:900,color:"#E65100",fontFamily:"'Outfit'"}}>{fmtM(totalAmt)}</div></div>
           </div>
         </div>
       </div>
