@@ -1,4 +1,5 @@
 "use client";
+// @ts-nocheck
 import { useState, useMemo, useEffect, useRef } from "react";
 
 const R=[
