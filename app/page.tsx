@@ -4397,7 +4397,7 @@ export default function App(){
           </div>
           <div style={{background:"var(--cd)",borderRadius:7,padding:9,border:"1px solid var(--bd)"}}>
             <h4 style={{fontSize:9,fontWeight:700,marginBottom:7}}>🔄 진행상태</h4>
-            <div style={{display:"flex",flexWrap:"wrap",gap:2}}>{stC.map(([st,cnt])=>{const col=STC[st]||"#999";return(<div key={st} onClick={()=>{setFs(fs===st?"전체":st);rp()}} style={{display:"flex",alignItems:"center",gap:2,padding:"1px 4px",borderRadius:4,background:col+"18",border:fs===st?`2px solid ${col}`:`1px solid ${col}33`,cursor:"pointer"}}><span style={{width:4,height:4,borderRadius:"50%",background:col}}/><span style={{fontSize:7,fontWeight:600,color:col}}>{st}</span><span style={{fontSize:7,fontWeight:800,color:col}}>{cnt}</span></div>)})}</div>
+            <div style={{display:"flex",flexWrap:"wrap",gap:4}}>{stC.map(([st,cnt])=>{const col=STC[st]||"#999";const isOn=fs===st;return(<div key={st} onClick={()=>{setFs(fs===st?"전체":st);rp()}} style={{display:"flex",alignItems:"center",gap:5,padding:"5px 10px",borderRadius:6,background:isOn?col:col+"15",border:isOn?`2px solid ${col}`:`1px solid ${col}33`,cursor:"pointer",transition:"all .2s"}}><span style={{width:7,height:7,borderRadius:"50%",background:isOn?"#fff":col,flexShrink:0}}/><span style={{fontSize:9,fontWeight:600,color:isOn?"#fff":col}}>{st}</span><span style={{fontSize:12,fontWeight:900,color:isOn?"#fff":col,fontFamily:"'Outfit'",marginLeft:2}}>{cnt}</span></div>)})}</div>
           </div>
         </div>
         <div style={{background:"var(--cd)",borderRadius:7,padding:7,marginBottom:8,border:"1px solid var(--bd)",display:"flex",gap:4,flexWrap:"wrap",alignItems:"center"}}>
@@ -4405,7 +4405,7 @@ export default function App(){
             <span style={{fontSize:13}}>🔍</span><input placeholder="제품명/복종..." value={q} onChange={e=>{setQ(e.target.value);rp()}} style={{flex:1,padding:"3px 6px",borderRadius:4,border:"1px solid var(--bd)",fontSize:10,background:"var(--ip)",color:"var(--t1)",outline:"none"}}/>
           </div>
           <div style={{display:"flex",gap:2,flexWrap:"wrap"}}>
-            {["전체","신제품","리오더","반응생산"].map(t=>(<button key={t} onClick={()=>{setFt(t);rp()}} style={{padding:"2px 6px",borderRadius:4,border:ft===t?"2px solid #1a73e8":"1px solid var(--bd)",background:ft===t?"#e8f0fe":"var(--cd)",color:ft===t?"#1a73e8":"var(--t2)",fontSize:8,fontWeight:600,cursor:"pointer"}}>{t}</button>))}
+            {["신제품","리오더"].map(t=>(<button key={t} onClick={()=>{setFt(t);rp()}} style={{padding:"2px 6px",borderRadius:4,border:ft===t?"2px solid #1a73e8":"1px solid var(--bd)",background:ft===t?"#e8f0fe":"var(--cd)",color:ft===t?"#1a73e8":"var(--t2)",fontSize:8,fontWeight:600,cursor:"pointer"}}>{t}</button>))}
           </div>
           <div style={{display:"flex",gap:2}}>
             {["전체","의류","슈즈","잡화"].map(cc=>(<button key={cc} onClick={()=>{setFc(cc);rp()}} style={{padding:"2px 6px",borderRadius:4,border:fc===cc?"2px solid #e91e63":"1px solid var(--bd)",background:fc===cc?"#fce4ec":"var(--cd)",color:fc===cc?"#e91e63":"var(--t2)",fontSize:8,fontWeight:600,cursor:"pointer"}}>{CL[cc]||"📋"}{cc}</button>))}
