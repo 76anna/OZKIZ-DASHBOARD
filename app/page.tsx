@@ -4184,18 +4184,18 @@ function Card({p,sc}){
     <div style={{background:"var(--cd)",borderRadius:10,border:"1px solid var(--bd)",overflow:"hidden",boxShadow:"0 1px 3px rgba(0,0,0,.04)"}}>
       <div style={{height:44,background:`linear-gradient(135deg,${sc||"#e8eaf6"}33,${sc||"#e8eaf6"}11)`,display:"flex",alignItems:"center",justifyContent:"center",position:"relative"}}>
         <span style={{fontSize:24,opacity:.4}}>{BI[p.b]||"📦"}</span>
-        <div style={{position:"absolute",top:3,left:3,display:"flex",gap:2}}>{p.z.map(s=><span key={s} style={{fontSize:7,padding:"0 3px",borderRadius:3,background:"rgba(0,0,0,.45)",color:"#fff",fontWeight:700}}>{SC[s]?.e}{s}</span>)}</div>
-        {p.ord>0&&<span style={{position:"absolute",bottom:3,right:3,fontSize:8,padding:"1px 5px",borderRadius:4,background:oc,color:"#fff",fontWeight:800,boxShadow:"0 1px 3px rgba(0,0,0,.3)"}}>{p.ord}차</span>}
-        {p.g&&<span style={{position:"absolute",top:3,right:3,fontSize:7,padding:"0 3px",borderRadius:3,background:p.g==="여아"?"#f48fb1":p.g==="남아"?"#64b5f6":"#a5d6a7",color:"#fff",fontWeight:700}}>{p.g}</span>}
+        <div style={{position:"absolute",top:3,left:3,display:"flex",gap:2}}>{p.z.map(s=><span key={s} style={{fontSize:8,padding:"1px 4px",borderRadius:3,background:"rgba(0,0,0,.55)",color:"#fff",fontWeight:700}}>{SC[s]?.e}{s}</span>)}</div>
+        {p.ord>0&&<span style={{position:"absolute",bottom:3,right:3,fontSize:10,padding:"2px 6px",borderRadius:5,background:oc,color:"#fff",fontWeight:800,boxShadow:"0 1px 3px rgba(0,0,0,.3)"}}>{p.ord}차</span>}
+        {p.g&&<span style={{position:"absolute",top:3,right:3,fontSize:8,padding:"1px 4px",borderRadius:3,background:p.g==="여아"?"#f48fb1":p.g==="남아"?"#64b5f6":"#a5d6a7",color:"#fff",fontWeight:700}}>{p.g}</span>}
       </div>
       <div style={{padding:"6px 8px 8px"}}>
-        <div style={{fontSize:11,fontWeight:800,marginBottom:3,overflow:"hidden",textOverflow:"ellipsis",whiteSpace:"nowrap"}}>{p.n}</div>
-        <div style={{display:"flex",gap:2,flexWrap:"wrap",marginBottom:3}}>{p.t.map((t,j)=>{const cfg=TB[t]||{bg:"#f5f5f5",c:"#616161",b:"#e0e0e0"};return <span key={j} style={{padding:"0 3px",borderRadius:3,fontSize:7,fontWeight:700,background:cfg.bg,color:cfg.c,border:`1px solid ${cfg.b}`}}>{t}</span>})}</div>
+        <div style={{fontSize:13,fontWeight:800,marginBottom:4,overflow:"hidden",textOverflow:"ellipsis",whiteSpace:"nowrap"}}>{p.n}</div>
+        <div style={{display:"flex",gap:2,flexWrap:"wrap",marginBottom:3}}>{p.t.map((t,j)=>{const cfg=TB[t]||{bg:"#f5f5f5",c:"#616161",b:"#e0e0e0"};return <span key={j} style={{padding:"1px 5px",borderRadius:4,fontSize:9,fontWeight:700,background:cfg.bg,color:cfg.c,border:`1px solid ${cfg.b}`}}>{t}</span>})}</div>
         <div style={{display:"flex",justifyContent:"space-between",alignItems:"center",marginBottom:5}}>
-          <span style={{padding:"0 4px",borderRadius:4,fontSize:7,fontWeight:600,background:stC+"22",color:stC,border:`1px solid ${stC}44`}}>{p.s}</span>
-          <span style={{fontSize:8,color:"var(--t3)"}}>{p.b}·{p.y}</span>
+          <span style={{padding:"1px 6px",borderRadius:4,fontSize:9,fontWeight:600,background:stC+"22",color:stC,border:`1px solid ${stC}44`}}>{p.s}</span>
+          <span style={{fontSize:10,color:"var(--t3)"}}>{p.b}·{p.y}</span>
         </div>
-        <div style={{background:"var(--rw)",borderRadius:5,padding:"4px 6px",border:"1px solid var(--bd)",fontSize:9}}>
+        <div style={{background:"var(--rw)",borderRadius:6,padding:"6px 8px",border:"1px solid var(--bd)",fontSize:11}}>
           <div style={{display:"flex",justifyContent:"space-between",marginBottom:2}}>
             <span style={{color:"var(--t3)"}}>원가</span><span style={{fontWeight:700}}>{fmt(p.cost)}</span>
           </div>
@@ -4203,7 +4203,7 @@ function Card({p,sc}){
             <span style={{color:"var(--t3)"}}>발주수량<span style={{color:oc,fontWeight:800,marginLeft:2}}>{p.ord?`(${p.ord}차)`:""}</span></span>
             <span style={{fontWeight:700,color:p.qty?"#1a73e8":"var(--t3)"}}>{fmtQ(p.qty)}</span>
           </div>
-          <div style={{borderTop:"1px dashed var(--bd)",paddingTop:2,display:"flex",justifyContent:"space-between",fontSize:10}}>
+          <div style={{borderTop:"1px dashed var(--bd)",paddingTop:3,display:"flex",justifyContent:"space-between",fontSize:12}}>
             <span style={{fontWeight:700,color:"#0d47a1"}}>생산금액</span>
             <span style={{fontWeight:900,color:total?"#0d47a1":"var(--t3)",fontFamily:"'Outfit'"}}>{fmtM(total)}</span>
           </div>
@@ -4347,10 +4347,10 @@ export default function App(){
       <div style={{background:"linear-gradient(135deg,#1a1a2e,#16213e,#0f3460)",padding:"18px 20px",color:"#fff"}}>
         <div style={{maxWidth:1200,margin:"0 auto"}}>
           <div style={{display:"flex",alignItems:"center",gap:10}}>
-            <span style={{fontSize:26}}>🧣</span>
+            <span style={{fontSize:30}}>🧣</span>
             <div style={{flex:1}}>
               <h1 style={{fontSize:17,fontWeight:900,fontFamily:"'Outfit'"}}>오즈키즈 시즌별 기획제품 대시보드</h1>
-              <p style={{fontSize:10,color:"rgba(255,255,255,.5)",marginTop:1}}>제품DB {P.length.toLocaleString()}개 · 발주DB 연동</p>
+              <p style={{fontSize:12,color:"rgba(255,255,255,.5)",marginTop:2}}>제품DB {P.length.toLocaleString()}개 · 발주DB 연동</p>
             </div>
             <div style={{display:"flex",alignItems:"center",gap:4}}>
               <span style={{width:6,height:6,borderRadius:"50%",background:syncCol,animation:syncStatus==="syncing"?"pulse 1s infinite":"none"}}/>
@@ -4358,25 +4358,25 @@ export default function App(){
             </div>
           </div>
           <div style={{display:"flex",gap:14,marginTop:10,padding:"8px 12px",background:"rgba(255,255,255,.08)",borderRadius:8,flexWrap:"wrap"}}>
-            <div><div style={{fontSize:8,color:"rgba(255,255,255,.5)"}}>제품수</div><div style={{fontSize:15,fontWeight:900,fontFamily:"'Outfit'"}}>{display.length}</div></div>
-            <div><div style={{fontSize:8,color:"rgba(255,255,255,.5)"}}>발주있음</div><div style={{fontSize:15,fontWeight:900,fontFamily:"'Outfit'"}}>{withQty}</div></div>
-            <div><div style={{fontSize:8,color:"rgba(255,255,255,.5)"}}>최대차수</div><div style={{fontSize:15,fontWeight:900,fontFamily:"'Outfit'",color:"#ce93d8"}}>{maxOrd}차</div></div>
-            <div><div style={{fontSize:8,color:"rgba(255,255,255,.5)"}}>총발주수량</div><div style={{fontSize:15,fontWeight:900,fontFamily:"'Outfit'",color:"#4fc3f7"}}>{totalQty.toLocaleString()}</div></div>
-            <div style={{marginLeft:"auto",textAlign:"right"}}><div style={{fontSize:8,color:"rgba(255,255,255,.5)"}}>총 생산금액</div><div style={{fontSize:18,fontWeight:900,color:"#4fc3f7",fontFamily:"'Outfit'"}}>{fmtM(totalAmt)}</div></div>
+            <div><div style={{fontSize:10,color:"rgba(255,255,255,.5)"}}>제품수</div><div style={{fontSize:20,fontWeight:900,fontFamily:"'Outfit'"}}>{display.length}</div></div>
+            <div><div style={{fontSize:10,color:"rgba(255,255,255,.5)"}}>발주있음</div><div style={{fontSize:20,fontWeight:900,fontFamily:"'Outfit'"}}>{withQty}</div></div>
+            <div><div style={{fontSize:10,color:"rgba(255,255,255,.5)"}}>최대차수</div><div style={{fontSize:20,fontWeight:900,fontFamily:"'Outfit'",color:"#ce93d8"}}>{maxOrd}차</div></div>
+            <div><div style={{fontSize:10,color:"rgba(255,255,255,.5)"}}>총발주수량</div><div style={{fontSize:20,fontWeight:900,fontFamily:"'Outfit'",color:"#4fc3f7"}}>{totalQty.toLocaleString()}</div></div>
+            <div style={{marginLeft:"auto",textAlign:"right"}}><div style={{fontSize:10,color:"rgba(255,255,255,.5)"}}>총 생산금액</div><div style={{fontSize:24,fontWeight:900,color:"#4fc3f7",fontFamily:"'Outfit'"}}>{fmtM(totalAmt)}</div></div>
           </div>
         </div>
       </div>
       <div style={{maxWidth:1200,margin:"0 auto",padding:"12px 16px 48px"}}>
         <div style={{display:"flex",gap:6,marginBottom:10,flexWrap:"wrap",alignItems:"center"}}>
           <span style={{fontSize:10,fontWeight:700}}>📅</span>
-          <div style={{display:"flex",gap:2,flexWrap:"wrap"}}>{yrs.map(y=>(<button key={y} onClick={()=>{setYr(y);rp()}} style={{padding:"2px 7px",borderRadius:5,border:yr===y?"2px solid #ff6f00":"1px solid var(--bd)",background:yr===y?"#fff3e0":"var(--cd)",color:yr===y?"#e65100":"var(--t2)",fontSize:9,fontWeight:700,cursor:"pointer"}}>{y}</button>))}</div>
-          <label style={{display:"flex",alignItems:"center",gap:3,fontSize:10,fontWeight:600,cursor:"pointer"}}>
+          <div style={{display:"flex",gap:2,flexWrap:"wrap"}}>{yrs.map(y=>(<button key={y} onClick={()=>{setYr(y);rp()}} style={{padding:"2px 7px",borderRadius:5,border:yr===y?"2px solid #ff6f00":"1px solid var(--bd)",background:yr===y?"#fff3e0":"var(--cd)",color:yr===y?"#e65100":"var(--t2)",fontSize:11,fontWeight:700,cursor:"pointer"}}>{y}</button>))}</div>
+          <label style={{display:"flex",alignItems:"center",gap:3,fontSize:12,fontWeight:600,cursor:"pointer"}}>
             <input type="checkbox" checked={plan} onChange={e=>{setPlan(e.target.checked);rp()}} style={{accentColor:"#c62828"}}/>🎯기획상품만
           </label>
           <div style={{marginLeft:"auto",display:"flex",gap:2,fontSize:9}}>
             <span style={{color:"var(--t3)",alignSelf:"center"}}>정렬:</span>
             {[["total","생산금액↓"],["qty","수량↓"],["ord","차수↓"],["cost","원가↓"]].map(([k,l])=>(
-              <button key={k} onClick={()=>{setSort(k);rp()}} style={{padding:"2px 6px",borderRadius:4,border:sort===k?"2px solid #0d47a1":"1px solid var(--bd)",background:sort===k?"#e3f2fd":"var(--cd)",color:sort===k?"#0d47a1":"var(--t2)",fontSize:8,fontWeight:600,cursor:"pointer"}}>{l}</button>
+              <button key={k} onClick={()=>{setSort(k);rp()}} style={{padding:"2px 6px",borderRadius:4,border:sort===k?"2px solid #0d47a1":"1px solid var(--bd)",background:sort===k?"#e3f2fd":"var(--cd)",color:sort===k?"#0d47a1":"var(--t2)",fontSize:10,fontWeight:600,cursor:"pointer"}}>{l}</button>
             ))}
           </div>
         </div>
@@ -4384,8 +4384,8 @@ export default function App(){
           {SEASONS.map(s=>{const cnt=fSD[s];const c=SC[s];const on=sel===s;return(
             <div key={s} onClick={()=>{setSel(sel===s?null:s);rp()}} style={{background:on?c.g:"var(--cd)",borderRadius:9,padding:"9px 8px",cursor:"pointer",border:on?`2px solid ${c.c}`:"2px solid var(--bd)",boxShadow:on?`0 3px 12px ${c.c}30`:"none",transition:"all .2s"}}>
               <div style={{display:"flex",justifyContent:"space-between",alignItems:"center"}}>
-                <div><span style={{fontSize:15}}>{c.e}</span><div style={{fontSize:11,fontWeight:800,color:on?"#fff":c.a}}>{s}</div></div>
-                <div style={{fontSize:18,fontWeight:900,color:on?"#fff":c.c,fontFamily:"'Outfit'"}}>{cnt}</div>
+                <div><span style={{fontSize:15}}>{c.e}</span><div style={{fontSize:13,fontWeight:800,color:on?"#fff":c.a}}>{s}</div></div>
+                <div style={{fontSize:22,fontWeight:900,color:on?"#fff":c.c,fontFamily:"'Outfit'"}}>{cnt}</div>
               </div>
             </div>
           )})}
@@ -4393,7 +4393,7 @@ export default function App(){
         <div style={{display:"grid",gridTemplateColumns:"repeat(auto-fit,minmax(200px,1fr))",gap:7,marginBottom:10}}>
           <div style={{background:"var(--cd)",borderRadius:7,padding:9,border:"1px solid var(--bd)"}}>
             <h4 style={{fontSize:9,fontWeight:700,marginBottom:7}}>📊 시즌별</h4>
-            {SEASONS.map(s=>{const c=SC[s];const cnt=fSD[s];return(<div key={s} style={{marginBottom:3}}><div style={{display:"flex",justifyContent:"space-between",fontSize:8,fontWeight:600,marginBottom:1}}><span>{c.e}{s}</span><span style={{color:c.c,fontWeight:800}}>{cnt}</span></div><div style={{height:4,borderRadius:2,background:"var(--br)",overflow:"hidden"}}><div style={{width:`${(cnt/maxS)*100}%`,height:"100%",borderRadius:2,background:c.g,transition:"width .5s"}}/></div></div>)})}
+            {SEASONS.map(s=>{const c=SC[s];const cnt=fSD[s];return(<div key={s} style={{marginBottom:3}}><div style={{display:"flex",justifyContent:"space-between",fontSize:10,fontWeight:600,marginBottom:2}}><span>{c.e}{s}</span><span style={{color:c.c,fontWeight:800}}>{cnt}</span></div><div style={{height:6,borderRadius:3,background:"var(--br)",overflow:"hidden"}}><div style={{width:`${(cnt/maxS)*100}%`,height:"100%",borderRadius:2,background:c.g,transition:"width .5s"}}/></div></div>)})}
           </div>
           <div style={{background:"var(--cd)",borderRadius:7,padding:9,border:"1px solid var(--bd)"}}>
             <h4 style={{fontSize:9,fontWeight:700,marginBottom:7}}>🔄 진행상태</h4>
@@ -4402,28 +4402,28 @@ export default function App(){
         </div>
         <div style={{background:"var(--cd)",borderRadius:7,padding:7,marginBottom:8,border:"1px solid var(--bd)",display:"flex",gap:4,flexWrap:"wrap",alignItems:"center"}}>
           <div style={{display:"flex",alignItems:"center",gap:3,flex:1,minWidth:120}}>
-            <span style={{fontSize:13}}>🔍</span><input placeholder="제품명/복종..." value={q} onChange={e=>{setQ(e.target.value);rp()}} style={{flex:1,padding:"3px 6px",borderRadius:4,border:"1px solid var(--bd)",fontSize:10,background:"var(--ip)",color:"var(--t1)",outline:"none"}}/>
+            <span style={{fontSize:13}}>🔍</span><input placeholder="제품명/복종..." value={q} onChange={e=>{setQ(e.target.value);rp()}} style={{flex:1,padding:"5px 8px",borderRadius:5,border:"1px solid var(--bd)",fontSize:12,background:"var(--ip)",color:"var(--t1)",outline:"none"}}/>
           </div>
           <div style={{display:"flex",gap:2,flexWrap:"wrap"}}>
             {["신제품","리오더"].map(t=>(<button key={t} onClick={()=>{setFt(t);rp()}} style={{padding:"2px 6px",borderRadius:4,border:ft===t?"2px solid #1a73e8":"1px solid var(--bd)",background:ft===t?"#e8f0fe":"var(--cd)",color:ft===t?"#1a73e8":"var(--t2)",fontSize:8,fontWeight:600,cursor:"pointer"}}>{t}</button>))}
           </div>
           <div style={{display:"flex",gap:2}}>
-            {["전체","의류","슈즈","잡화"].map(cc=>(<button key={cc} onClick={()=>{setFc(cc);rp()}} style={{padding:"2px 6px",borderRadius:4,border:fc===cc?"2px solid #e91e63":"1px solid var(--bd)",background:fc===cc?"#fce4ec":"var(--cd)",color:fc===cc?"#e91e63":"var(--t2)",fontSize:8,fontWeight:600,cursor:"pointer"}}>{CL[cc]||"📋"}{cc}</button>))}
+            {["전체","의류","슈즈","잡화"].map(cc=>(<button key={cc} onClick={()=>{setFc(cc);rp()}} style={{padding:"2px 6px",borderRadius:4,border:fc===cc?"2px solid #e91e63":"1px solid var(--bd)",background:fc===cc?"#fce4ec":"var(--cd)",color:fc===cc?"#e91e63":"var(--t2)",fontSize:10,fontWeight:600,cursor:"pointer"}}>{CL[cc]||"📋"}{cc}</button>))}
           </div>
           {(sel||fs!=="전체")&&<button onClick={()=>{setSel(null);setFs("전체");rp()}} style={{padding:"2px 6px",borderRadius:4,border:"1px solid var(--bd)",background:"var(--cd)",color:"var(--t2)",fontSize:8,fontWeight:600,cursor:"pointer"}}>✕초기화</button>}
         </div>
-        <div style={{marginBottom:6}}><h3 style={{fontSize:11,fontWeight:800}}>{sel?`${SC[sel].e}${sel}`:"📋전체"}{yr!=="전체"?` · ${yr}년`:""}{plan?" · 기획상품":""}{fs!=="전체"?` · ${fs}`:""} <span style={{fontWeight:600,color:"var(--t2)"}}>({display.length}개)</span></h3></div>
+        <div style={{marginBottom:6}}><h3 style={{fontSize:14,fontWeight:800}}>{sel?`${SC[sel].e}${sel}`:"📋전체"}{yr!=="전체"?` · ${yr}년`:""}{plan?" · 기획상품":""}{fs!=="전체"?` · ${fs}`:""} <span style={{fontWeight:600,color:"var(--t2)"}}>({display.length}개)</span></h3></div>
         {display.length===0?(
           <div style={{textAlign:"center",padding:32,color:"var(--t3)",background:"var(--cd)",borderRadius:7,border:"1px solid var(--bd)"}}><div style={{fontSize:28,marginBottom:4}}>🔍</div><div style={{fontSize:10}}>조건에 맞는 제품이 없습니다</div></div>
         ):(
-          <div style={{display:"grid",gridTemplateColumns:"repeat(auto-fill,minmax(175px,1fr))",gap:8}}>
+          <div style={{display:"grid",gridTemplateColumns:"repeat(auto-fill,minmax(200px,1fr))",gap:8}}>
             {paged.map((p,i)=><Card key={p.n+i} p={p} sc={sel?SC[sel].c:SC[p.z[0]]?.c}/>)}
           </div>
         )}
         {pages>1&&(<div style={{display:"flex",justifyContent:"center",gap:4,marginTop:8}}>
-          <button disabled={pg===0} onClick={()=>setPg(pg-1)} style={{padding:"2px 7px",borderRadius:4,border:"1px solid var(--bd)",background:"var(--cd)",color:pg===0?"#ccc":"var(--t1)",cursor:pg===0?"default":"pointer",fontSize:9,fontWeight:600}}>←이전</button>
-          <span style={{padding:"2px 7px",fontSize:9,fontWeight:700,color:"var(--t2)"}}>{pg+1}/{pages}</span>
-          <button disabled={pg>=pages-1} onClick={()=>setPg(pg+1)} style={{padding:"2px 7px",borderRadius:4,border:"1px solid var(--bd)",background:"var(--cd)",color:pg>=pages-1?"#ccc":"var(--t1)",cursor:pg>=pages-1?"default":"pointer",fontSize:9,fontWeight:600}}>다음→</button>
+          <button disabled={pg===0} onClick={()=>setPg(pg-1)} style={{padding:"2px 7px",borderRadius:4,border:"1px solid var(--bd)",background:"var(--cd)",color:pg===0?"#ccc":"var(--t1)",cursor:pg===0?"default":"pointer",fontSize:11,fontWeight:600}}>←이전</button>
+          <span style={{padding:"2px 7px",fontSize:11,fontWeight:700,color:"var(--t2)"}}>{pg+1}/{pages}</span>
+          <button disabled={pg>=pages-1} onClick={()=>setPg(pg+1)} style={{padding:"2px 7px",borderRadius:4,border:"1px solid var(--bd)",background:"var(--cd)",color:pg>=pages-1?"#ccc":"var(--t1)",cursor:pg>=pages-1?"default":"pointer",fontSize:11,fontWeight:600}}>다음→</button>
         </div>)}
       </div>
     </div>
